@@ -4,3 +4,6 @@
 .container{
     padding: 20px 50px;
 }
+#success-model{
+    display: none;
+}
