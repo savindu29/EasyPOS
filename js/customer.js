@@ -45,7 +45,7 @@ function saveCustomer(){
     }else{
         launchModel('warning','Already Exists')
     }
-    $('#load-table-data-btn').click();
+    setTableData();
 
 }
 
@@ -61,7 +61,7 @@ const clearFields=()=>{
     $('#customer-salary').val('');
 }
 const loadUpdateModel =(id,name,address,salary)=>{
-    console.log(JSON.parse(id))
+
     $('#update-customer-id').val(id);
     $('#update-customer-name').val(name);
     $('#update-customer-address').val(address);

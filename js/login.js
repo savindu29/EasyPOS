@@ -1,5 +1,5 @@
 const users=[{user:'savindu',password:"abcd", avatar: 'https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?w=740&t=st=1669642808~exp=1669643408~hmac=5ab465e8cdb75ff9f9d771792cbcf8346af0d45959cdbbaf26c5dca07e168315'},
-    {user:'kamal',password: "1234",avatar:'https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=996&t=st=1669642865~exp=1669643465~hmac=75dca52c3e62dc377588789e5b0f63a71ac84b0d301af921f01a78e11332af7e' }
+    {user:'pamudi',password: "1234",avatar:'https://img.freepik.com/premium-vector/portrait-brunette-woman-avatar-female-person-vector-icon-adult-flat-style_605517-159.jpg?w=740' }
 ]
 
 const login=()=>{
