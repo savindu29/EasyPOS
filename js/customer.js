@@ -45,12 +45,13 @@ function saveCustomer(){
     }else{
         launchModel('warning','Already Exists')
     }
+    $('#load-table-data-btn').click();
 
 }
 
 launchModel=(type,message)=>{
     $('#exampleModalLabel').html(type);
-    $('.save-data-body').html(message)
+    $('#save-data-body').html(message)
     $('#success-model').click();
 }
 const clearFields=()=>{
