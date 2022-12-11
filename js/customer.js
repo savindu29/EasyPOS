@@ -11,8 +11,23 @@ initializeCustomer=()=>{
         customers=tempData;
         console.log(tempData)
     }
+}
+function setTableData(){
+    htmlData = '';
+    customers.forEach(data=>{
+        htmlData +=`<tr>
+<td>${data.id}</td>
+<td>${data.name}</td>
+<td>${data.address}</td>
+<td>${data.salary}</td>
+<td>
+<button onclick="loadUpdateModel('${data.id}','${data.name}','${data.address}','${data.salary}')" class="btn btn-success btn-sm">Update</button> | 
+<button class="btn btn-danger btn-sm">Delete</button> 
+</td>
+</tr>`
 
-
+    });
+    $('#table-body').html(htmlData);
 }
 function saveCustomer(){
     let customer = new Customer(
@@ -35,7 +50,7 @@ function saveCustomer(){
 
 launchModel=(type,message)=>{
     $('#exampleModalLabel').html(type);
-    $('.modal-body').html(message)
+    $('.save-data-body').html(message)
     $('#success-model').click();
 }
 const clearFields=()=>{
@@ -43,4 +58,14 @@ const clearFields=()=>{
     $('#customer-name').val('');
     $('#customer-address').val('');
     $('#customer-salary').val('');
+}
+const loadUpdateModel =(id,name,address,salary)=>{
+    console.log(JSON.parse(id))
+    $('#update-customer-id').val(id);
+    $('#update-customer-name').val(name);
+    $('#update-customer-address').val(address);
+    $('#update-customer-salary').val(salary);
+
+
+    $('#update-model-btn').click();
 }
