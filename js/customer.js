@@ -61,12 +61,9 @@ const clearFields=()=>{
     $('#customer-salary').val('');
 }
 const loadUpdateModel =(id,name,address,salary)=>{
-
     $('#update-customer-id').val(id);
     $('#update-customer-name').val(name);
     $('#update-customer-address').val(address);
     $('#update-customer-salary').val(salary);
-
-
     $('#update-model-btn').click();
 }
