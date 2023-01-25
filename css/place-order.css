@@ -1,0 +1,24 @@
+.title{
+    color: #d35400;
+}
+.order-id-date-outer{
+    display: flex;
+    align-items: center;
+}
+.order-id{
+    margin-right: 20px;
+}
+.col-3{
+
+}
+.total{
+    color: #d35400;
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#warning-model,#success-model{
+    display: none;
+}
