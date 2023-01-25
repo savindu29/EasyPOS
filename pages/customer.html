@@ -32,11 +32,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-8 ">
-            <input type="search" class="form-control" placeholder="Search">
+        <div class="col-8">
+            <input onkeyup="setTableData()" type="search" class="form-control" placeholder="Search" id="search">
         </div>
         <div class="col-4">
-           <button class="btn btn-primary" onclick="saveCustomer()">Save Customer</button>
+           <button class="btn btn-warning col-12" onclick="saveCustomer()">Save Customer</button>
         </div>
     </div>
     <hr>

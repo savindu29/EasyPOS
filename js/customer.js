@@ -14,18 +14,25 @@ initializeCustomer=()=>{
     }
 }
 function setTableData(){
+    let searchText =$('#search').val().toLowerCase();
+
     htmlData = '';
     customers.forEach(data=>{
-        htmlData +=`<tr>
+        if(data.id.toLowerCase().includes(searchText)
+            ||data.name.toLowerCase().includes(searchText)
+            ||data.address.toLowerCase().includes(searchText)){
+            htmlData +=`<tr>
 <td>${data.id}</td>
 <td>${data.name}</td>
 <td>${data.address}</td>
 <td>${data.salary}</td>
 <td>
-<button onclick="loadUpdateModel('${data.id}','${data.name}','${data.address}','${data.salary}')" class="btn btn-success btn-sm">Update</button> | 
-<button onclick="deleteCustomer('${data.id}')" class="btn btn-danger btn-sm">Delete</button> 
+<button onclick="loadUpdateModel('${data.id}','${data.name}','${data.address}','${data.salary}')" class="btn btn-success btn-sm col-3">Update</button> | 
+<button onclick="deleteCustomer('${data.id}')" class="btn btn-danger btn-sm col-3">Delete</button> 
 </td>
 </tr>`
+        }
+
 
     });
     $('#table-body').html(htmlData);
@@ -52,7 +59,7 @@ function saveCustomer(){
         Number($('#customer-salary').val())
     );
 
-    if(customers.find(data=>customer.id==data.id)==undefined){
+    if(customers.find(data=>customer.id===data.id)===undefined){
         customers.push(customer);
         localStorage.setItem('customers',JSON.stringify(customers));
         clearFields();

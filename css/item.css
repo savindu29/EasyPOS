@@ -1,0 +1,17 @@
+.col-12,.col-8,.col-4{
+    margin-bottom: 20px;
+}
+.container{
+    padding: 20px 20px;
+}
+#success-model,#update-model-btn{
+    display: none;
+}
+.load-btn{
+    text-align: right;
+
+}
+.table-outer{
+    height: 45vh;
+    overflow: auto;
+}
