@@ -111,7 +111,7 @@ function setCartData(){
 <td>${response.unitPrice}</td>
 <td>${response.qty}</td>
 <td>${response.total}</td>
-<td><button class="btn btn-danger btn-sm" onclick="#">Remove</button></td>
+<td><button class="btn btn-danger btn-sm" onclick="removeItem('${response.code}')">Remove</button></td>
 </tr>`
     });
     $('#table').html(rows);
@@ -196,6 +196,17 @@ function placeOrder(){
     clearTable();
     launchMessage("success","Order Placed Successfully!!!");
 }
+function removeItem(code){
+    if(confirm('Are you sure')) {
+        for (let i = 0; i < cartData.length; i++) {
+            if (cartData[i].code === code) {
+                cartData.splice(i, 1);
+                setCartData();
+                return;
+            }
+        }
+    }
+}
 const  clearFields=()=>{
     generateOrderId();
     $('#customer-id').val('');
@@ -212,4 +223,5 @@ const  clearFields=()=>{
 }
 const  clearTable=()=>{
     $('#table').html('');
+    cartData=[];
 }
