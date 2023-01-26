@@ -22,6 +22,7 @@ const loadData =()=>{
     }
     // load customer ids
     let tempCustomerData = JSON.parse(localStorage.getItem('customers'));
+
     if(tempCustomerData!==null){
         customers=tempCustomerData;
         let customerOption='';
@@ -97,9 +98,7 @@ function addToCart(){
      }
      launchMessage("success","Added Successfully");
      setCartData();
-
-
-
+     clearItemFields();
 
 }
 function setCartData(){
@@ -192,9 +191,12 @@ function placeOrder(){
     tempOrderArr.push(order)
     localStorage.setItem('orders',JSON.stringify(tempOrderArr));
 
-    clearFields();
-    clearTable();
+    clearItemFields();
+
     launchMessage("success","Order Placed Successfully!!!");
+    updateCart();
+    clearCustomerFields();
+    clearTable();
 }
 function removeItem(code){
     if(confirm('Are you sure')) {
@@ -207,17 +209,43 @@ function removeItem(code){
         }
     }
 }
-const  clearFields=()=>{
-    generateOrderId();
-    $('#customer-id').val('');
-    $('#name').val('');
-    $('#address').val('');
-    $('#salary').val('');
+const updateCart =()=>{
+
+    let tempData = JSON.parse(localStorage.getItem('items'));
+
+    if(tempData!==null){
+        cartData.forEach(response=>{
+            for (let i = 0; i < tempData.length; i++) {
+                if(tempData[i].code===response.code){
+                    tempData[i].qty = tempData[i].qty-response.qty;
+                    break;
+                }
+            }
+        });
+
+        localStorage.setItem('items',JSON.stringify(tempData));
+        loadData();
+
+    }
+    // localStorage.setItem('items',JSON.stringify(tempData));
+}
+const  clearItemFields=()=>{
+
     $('#item-code').val('');
     $('#description').val('');
     $('#unit-price').val('');
     $('#qty-on-hand').val('');
     $('#qty').val('');
+
+
+}
+const  clearCustomerFields=()=>{
+    generateOrderId();
+    $('#customer-id').val('');
+    $('#name').val('');
+    $('#address').val('');
+    $('#salary').val('');
+
 
 
 }
