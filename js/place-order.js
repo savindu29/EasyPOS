@@ -224,7 +224,7 @@ const updateCart =()=>{
         });
 
         localStorage.setItem('items',JSON.stringify(tempData));
-        loadData();
+        window.location.reload();
 
     }
     // localStorage.setItem('items',JSON.stringify(tempData));
