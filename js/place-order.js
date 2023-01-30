@@ -186,7 +186,7 @@ function placeOrder(){
         $('#order-id').html(),
         $('#date').html(),
         $('#total').html(),
-        $('#customer-id').html(),
+        $('#customer-id').val(),
         orderItems);
     tempOrderArr.push(order)
     localStorage.setItem('orders',JSON.stringify(tempOrderArr));

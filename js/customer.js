@@ -22,15 +22,15 @@ function setTableData(){
             ||data.name.toLowerCase().includes(searchText)
             ||data.address.toLowerCase().includes(searchText)){
             htmlData +=`<tr>
-<td>${data.id}</td>
-<td>${data.name}</td>
-<td>${data.address}</td>
-<td>${data.salary}</td>
-<td>
-<button onclick="loadUpdateModel('${data.id}','${data.name}','${data.address}','${data.salary}')" class="btn btn-success btn-sm col-3">Update</button> | 
-<button onclick="deleteCustomer('${data.id}')" class="btn btn-danger btn-sm col-3">Delete</button> 
-</td>
-</tr>`
+            <td>${data.id}</td>
+            <td>${data.name}</td>
+            <td>${data.address}</td>
+            <td>${data.salary}</td>
+            <td>
+    <button onclick="loadUpdateModel('${data.id}','${data.name}','${data.address}','${data.salary}')" class="btn btn-success btn-sm col-3">Update</button> | 
+    <button onclick="deleteCustomer('${data.id}')" class="btn btn-danger btn-sm col-3">Delete</button> 
+    </td>
+    </tr>`
         }
 
 
