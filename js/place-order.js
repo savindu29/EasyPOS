@@ -161,9 +161,10 @@ function  Order(orderId,date,total,customer,OrderItems){
     this.OrderItems = OrderItems;
 
 }
-function OrderItem(code,qty,total){
+function OrderItem(code,qty,unitPrice,total){
     this.code= code;
     this.qty= qty;
+    this.unitprice= unitPrice;
     this.total= total;
 }
 function placeOrder(){
@@ -178,7 +179,7 @@ function placeOrder(){
     }
     let orderItems=[];
     cartData.forEach(response=>{
-        let item = new OrderItem(response.code,response.qty,response.total)
+        let item = new OrderItem(response.code,response.qty,response.unitPrice,response.total)
         orderItems.push(item)
     });
 
